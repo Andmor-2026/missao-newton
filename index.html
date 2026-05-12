@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🚀 Missão Newton — Leis do Movimento na Engenharia Química</title>
+    <title>Missao Newton - Leis do Movimento na Engenharia Quimica</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -211,6 +211,7 @@
             .card { padding: 20px; }
         }
     </style>
+<base target="_blank">
 </head>
 <body>
     <canvas id="particles"></canvas>
@@ -253,13 +254,15 @@
                 <div class="value" id="starsValue">⭐ 0</div>
             </div>
         </div>
+
+        <!-- SCREEN: LOGIN -->
         <div class="screen active" id="screen-login">
             <div class="card">
                 <div class="card-title">🎯 Cadastro da Equipe</div>
                 <p style="margin-bottom:20px;color:#8892b0;">Informe o nome do seu grupo para embarcar na missão:</p>
                 <input type="text" id="playerName" placeholder="Nome do grupo / equipe" maxlength="50">
                 <div style="text-align:center;margin-top:20px;">
-                    <button class="btn btn-primary" onclick="startGame()">🚀 Iniciar Missão</button>
+                    <button type="button" class="btn btn-primary" onclick="startGame()">🚀 Iniciar Missão</button>
                 </div>
                 <div id="loginError" style="color:var(--danger);text-align:center;margin-top:15px;display:none;">
                     Digite o nome do grupo para continuar!
@@ -283,6 +286,8 @@
                 </div>
             </div>
         </div>
+
+        <!-- SCREEN: LEVEL INTRO -->
         <div class="screen" id="screen-intro">
             <div class="card">
                 <div class="card-title" id="introTitle">Missão 1</div>
@@ -290,10 +295,12 @@
                 <div class="scenario" id="introScenario"></div>
                 <div id="introContent"></div>
                 <div style="text-align:center;margin-top:25px;">
-                    <button class="btn btn-primary" onclick="startLevel()">▶️ Iniciar Desafio</button>
+                    <button type="button" class="btn btn-primary" onclick="startLevel()">▶️ Iniciar Desafio</button>
                 </div>
             </div>
         </div>
+
+        <!-- SCREEN: QUIZ -->
         <div class="screen" id="screen-quiz">
             <div class="card">
                 <div class="timer" id="timer">⏱️ 02:00</div>
@@ -305,12 +312,14 @@
                     💡 <strong>Dica:</strong> <span id="hintText"></span>
                 </div>
                 <div style="display:flex;justify-content:space-between;margin-top:20px;">
-                    <button class="btn btn-outline" onclick="showHint()">💡 Dica (-20 pts)</button>
-                    <button class="btn btn-primary" id="btnConfirm" onclick="confirmAnswer()" disabled>✅ Confirmar</button>
+                    <button type="button" class="btn btn-outline" onclick="showHint()">💡 Dica (-20 pts)</button>
+                    <button type="button" class="btn btn-primary" id="btnConfirm" onclick="confirmAnswer()" disabled>✅ Confirmar</button>
                 </div>
                 <div class="feedback" id="feedback"></div>
             </div>
         </div>
+
+        <!-- SCREEN: LEVEL COMPLETE -->
         <div class="screen" id="screen-complete">
             <div class="card" style="text-align:center;">
                 <div id="completeIcon" style="font-size:4rem;margin-bottom:20px;">🎉</div>
@@ -323,22 +332,26 @@
                 </div>
                 <div id="completeBadges" style="margin-bottom:20px;"></div>
                 <div style="text-align:center;">
-                    <button class="btn btn-success" id="btnNextLevel" onclick="nextLevel()">🚀 Próxima Missão</button>
-                    <button class="btn btn-outline" style="margin-left:10px;" onclick="showLeaderboard()">🏆 Ranking</button>
+                    <button type="button" class="btn btn-success" id="btnNextLevel" onclick="nextLevel()">🚀 Próxima Missão</button>
+                    <button type="button" class="btn btn-outline" style="margin-left:10px;" onclick="showLeaderboard()">🏆 Ranking</button>
                 </div>
             </div>
         </div>
+
+        <!-- SCREEN: GAME OVER -->
         <div class="screen" id="screen-gameover">
             <div class="card" style="text-align:center;">
                 <div style="font-size:4rem;margin-bottom:20px;">💥</div>
                 <h2 style="font-family:'Orbitron';color:var(--danger);margin-bottom:15px;">Missão Falhou!</h2>
                 <p style="margin-bottom:20px;">Você não acertou questões suficientes para avançar.</p>
                 <div style="margin-bottom:20px;">
-                    <button class="btn btn-primary" onclick="retryLevel()">🔄 Tentar Novamente</button>
-                    <button class="btn btn-outline" style="margin-left:10px;" onclick="showLeaderboard()">🏆 Ranking</button>
+                    <button type="button" class="btn btn-primary" onclick="retryLevel()">🔄 Tentar Novamente</button>
+                    <button type="button" class="btn btn-outline" style="margin-left:10px;" onclick="showLeaderboard()">🏆 Ranking</button>
                 </div>
             </div>
         </div>
+
+        <!-- SCREEN: VICTORY -->
         <div class="screen" id="screen-victory">
             <div class="card" style="text-align:center;">
                 <div style="font-size:4rem;margin-bottom:20px;">🏆</div>
@@ -354,14 +367,16 @@
                 </div>
                 <div id="finalBadges" style="margin-bottom:20px;"></div>
                 <div style="margin-bottom:20px;">
-                    <button class="btn btn-success" onclick="exportResults()">📊 Exportar para Planilha</button>
-                    <button class="btn btn-outline" style="margin-left:10px;" onclick="showLeaderboard()">🏆 Ver Ranking</button>
+                    <button type="button" class="btn btn-success" onclick="exportResults()">📊 Exportar para Planilha</button>
+                    <button type="button" class="btn btn-outline" style="margin-left:10px;" onclick="showLeaderboard()">🏆 Ver Ranking</button>
                 </div>
                 <div style="margin-top:15px;">
-                    <button class="btn btn-primary" onclick="restartGame()">🔄 Jogar Novamente</button>
+                    <button type="button" class="btn btn-primary" onclick="restartGame()">🔄 Jogar Novamente</button>
                 </div>
             </div>
         </div>
+
+        <!-- SCREEN: LEADERBOARD -->
         <div class="screen" id="screen-leaderboard">
             <div class="card">
                 <div class="card-title">🏆 Hall da Fama</div>
@@ -372,24 +387,25 @@
                     </table>
                 </div>
                 <div style="text-align:center;margin-top:20px;">
-                    <button class="btn btn-outline" onclick="goBack()">⬅️ Voltar</button>
+                    <button type="button" class="btn btn-outline" onclick="goBack()">⬅️ Voltar</button>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="modal-overlay" id="modal">
         <div class="modal">
             <h2 id="modalTitle">Título</h2>
             <p id="modalText">Texto</p>
-            <div style="margin-top:20px;"><button class="btn btn-primary" onclick="closeModal()">OK</button></div>
+            <div style="margin-top:20px;"><button type="button" class="btn btn-primary" onclick="closeModal()">OK</button></div>
         </div>
     </div>
 <script>
-const levels = [
+var levels = [
     {
         id: 1, title: "⚗️ Missão 1: O Reator Inercial", icon: "⚗️", difficulty: 1,
-        scenario: `Você é um engenheiro químico recém-contratado na Indústria Petroquímica Nova Era. Seu primeiro desafio: analisar o comportamento de fluidos em um reator batch. O reator contém 500 kg de uma mistura reacional. Quando a agitação é desligada abruptamente, o fluido continua em movimento por alguns segundos antes de parar.`,
-        intro: `Nesta missão você aplicará a <strong>1ª Lei de Newton (Inércia)</strong> e a <strong>2ª Lei (F=ma)</strong> em contextos de engenharia química. Responda 3 perguntas para avançar.`,
+        scenario: "Você é um engenheiro químico recém-contratado na Indústria Petroquímica Nova Era. Seu primeiro desafio: analisar o comportamento de fluidos em um reator batch. O reator contém 500 kg de uma mistura reacional. Quando a agitação é desligada abruptamente, o fluido continua em movimento por alguns segundos antes de parar.",
+        intro: "Nesta missão você aplicará a <strong>1ª Lei de Newton (Inércia)</strong> e a <strong>2ª Lei (F=ma)</strong> em contextos de engenharia química. Responda 3 perguntas para avançar.",
         questions: [
             {
                 text: "Quando a agitação do reator é desligada, o fluido continua em movimento por alguns instantes. Qual lei de Newton explica esse fenômeno?",
@@ -431,8 +447,8 @@ const levels = [
     },
     {
         id: 2, title: "🔧 Missão 2: Tubulação em Equilíbrio", icon: "🔧", difficulty: 2,
-        scenario: `Você está projetando uma tubulação de transporte de etanol entre dois tanques. A bomba aplica uma força constante de 2000 N para mover o fluido. Entretanto, o atrito nas paredes da tubulação e as válvulas oferecem resistência.`,
-        intro: `Aqui você trabalhará com <strong>equilíbrio de forças</strong> (1ª Lei) e <strong>dinâmica</strong> (2ª Lei) em sistemas de transporte de fluidos — essencial em plantas químicas.`,
+        scenario: "Você está projetando uma tubulação de transporte de etanol entre dois tanques. A bomba aplica uma força constante de 2000 N para mover o fluido. Entretanto, o atrito nas paredes da tubulação e as válvulas oferecem resistência.",
+        intro: "Aqui você trabalhará com <strong>equilíbrio de forças</strong> (1ª Lei) e <strong>dinâmica</strong> (2ª Lei) em sistemas de transporte de fluidos — essencial em plantas químicas.",
         questions: [
             {
                 text: "Se a bomba aplica 2000 N e o atrito total é de 2000 N na mesma direção oposta, qual a aceleração do fluido?",
@@ -474,8 +490,8 @@ const levels = [
     },
     {
         id: 3, title: "🛡️ Missão 3: Segurança na Planta", icon: "🛡️", difficulty: 3,
-        scenario: `Um acidente quase ocorreu na planta: um operador tropeçou e derrubou um cilindro de gás comprimido de 50 kg. O cilindro rolou e colidiu com uma parede. Você precisa analisar as forças envolvidas para prevenir futuros incidentes.`,
-        intro: `Nesta missão, a <strong>3ª Lei de Newton (Ação-Reação)</strong> é fundamental. Entenda como forças de reação impactam a segurança em plantas industriais.`,
+        scenario: "Um acidente quase ocorreu na planta: um operador tropeçou e derrubou um cilindro de gás comprimido de 50 kg. O cilindro rolou e colidiu com uma parede. Você precisa analisar as forças envolvidas para prevenir futuros incidentes.",
+        intro: "Nesta missão, a <strong>3ª Lei de Newton (Ação-Reação)</strong> é fundamental. Entenda como forças de reação impactam a segurança em plantas industriais.",
         questions: [
             {
                 text: "Quando o operador empurrou o cilindro com 100 N para frente, o que aconteceu segundo a 3ª Lei?",
@@ -517,8 +533,8 @@ const levels = [
     },
     {
         id: 4, title: "🚀 Missão 4: Propulsão Química", icon: "🚀", difficulty: 4,
-        scenario: `Sua equipe está desenvolvendo um novo propulsor químico para foguetes experimentais usando decomposição de peróxido de hidrogênio. O propulsor deve gerar empuxo controlado para manobras de precisão.`,
-        intro: `A <strong>3ª Lei de Newton</strong> é o princípio fundamental da propulsão a jato. Aplique-a ao design de sistemas de propulsão química.`,
+        scenario: "Sua equipe está desenvolvendo um novo propulsor químico para foguetes experimentais usando decomposição de peróxido de hidrogênio. O propulsor deve gerar empuxo controlado para manobras de precisão.",
+        intro: "A <strong>3ª Lei de Newton</strong> é o princípio fundamental da propulsão a jato. Aplique-a ao design de sistemas de propulsão química.",
         questions: [
             {
                 text: "O propulsor expelgás a 500 m/s com vazão mássica de 2 kg/s. Qual o empuxo (força de propulsão) gerado?",
@@ -560,8 +576,8 @@ const levels = [
     },
     {
         id: 5, title: "👑 Missão 5: Mestre Newtoniano", icon: "👑", difficulty: 5,
-        scenario: `Você foi promovido a Engenheiro Chefe de Processos! Sua primeira tarefa é otimizar uma coluna de destilação complexa onde múltiplas forças interagem: pressão, gravidade, atrito viscoso e forças de reação do sistema.`,
-        intro: `Missão final! Integre <strong>todas as 3 Leis de Newton</strong> em um sistema complexo de engenharia química. Demonstração de maestria completa.`,
+        scenario: "Você foi promovido a Engenheiro Chefe de Processos! Sua primeira tarefa é otimizar uma coluna de destilação complexa onde múltiplas forças interagem: pressão, gravidade, atrito viscoso e forças de reação do sistema.",
+        intro: "Missão final! Integre <strong>todas as 3 Leis de Newton</strong> em um sistema complexo de engenharia química. Demonstração de maestria completa.",
         questions: [
             {
                 text: "Em uma coluna de destilação, o vapor sobe enquanto o líquido desce. A força que empurra o vapor para cima é a pressão do reboiler. Qual a reação correspondente?",
@@ -615,15 +631,15 @@ const levels = [
     }
 ];
 
-let gameState = {
-    player: { name: '', email: '', matricula: '', turma: '' },
+var gameState = {
+    player: { name: '', email: '-', matricula: '-', turma: '-' },
     currentLevel: 0, currentQuestion: 0, score: 0, stars: 0,
     totalTime: 0, levelTime: 0, timerInterval: null,
     answers: [], levelScores: [], hintsUsed: 0,
     correctCount: 0, totalQuestions: 0, selectedOption: null
 };
 
-let leaderboard = JSON.parse(localStorage.getItem('newtonLeaderboard') || '[]');
+var leaderboard = JSON.parse(localStorage.getItem('newtonLeaderboard') || '[]');
 
 function init() {
     createStars();
@@ -631,9 +647,10 @@ function init() {
 }
 
 function createStars() {
-    const container = document.getElementById('stars');
-    for (let i = 0; i < 100; i++) {
-        const star = document.createElement('div');
+    var container = document.getElementById('stars');
+    var i;
+    for (i = 0; i < 100; i++) {
+        var star = document.createElement('div');
         star.className = 'star';
         star.style.left = Math.random() * 100 + '%';
         star.style.top = Math.random() * 100 + '%';
@@ -645,12 +662,13 @@ function createStars() {
 }
 
 function initParticles() {
-    const canvas = document.getElementById('particles');
-    const ctx = canvas.getContext('2d');
+    var canvas = document.getElementById('particles');
+    var ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    const particles = [];
-    for (let i = 0; i < 50; i++) {
+    var particles = [];
+    var i;
+    for (i = 0; i < 50; i++) {
         particles.push({
             x: Math.random() * canvas.width, y: Math.random() * canvas.height,
             vx: (Math.random() - 0.5) * 0.5, vy: (Math.random() - 0.5) * 0.5,
@@ -659,27 +677,38 @@ function initParticles() {
     }
     function animate() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        particles.forEach(p => {
+        var i;
+        for (i = 0; i < particles.length; i++) {
+            var p = particles[i];
             p.x += p.vx; p.y += p.vy;
-            if (p.x < 0) p.x = canvas.width; if (p.x > canvas.width) p.x = 0;
-            if (p.y < 0) p.y = canvas.height; if (p.y > canvas.height) p.y = 0;
+            if (p.x < 0) p.x = canvas.width;
+            if (p.x > canvas.width) p.x = 0;
+            if (p.y < 0) p.y = canvas.height;
+            if (p.y > canvas.height) p.y = 0;
             ctx.beginPath();
             ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
             ctx.fillStyle = 'rgba(0, 212, 255, 0.3)';
             ctx.fill();
-        });
+        }
         requestAnimationFrame(animate);
     }
     animate();
-    window.addEventListener('resize', () => {
+    window.addEventListener('resize', function() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
     });
 }
 
 function showScreen(screenId) {
-    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-    document.getElementById(screenId).classList.add('active');
+    var screens = document.querySelectorAll('.screen');
+    var i;
+    for (i = 0; i < screens.length; i++) {
+        screens[i].classList.remove('active');
+    }
+    var target = document.getElementById(screenId);
+    if (target) {
+        target.classList.add('active');
+    }
 }
 
 function showModal(title, text) {
@@ -693,42 +722,48 @@ function closeModal() {
 }
 
 function startGame() {
-    const name = document.getElementById('playerName').value.trim();
+    var name = document.getElementById('playerName').value.trim();
     if (!name) {
         document.getElementById('loginError').style.display = 'block';
         return;
     }
-    gameState.player = { name: name, email: '-', matricula: '-', turma: '-' };
-    gameState.currentLevel = 0; gameState.score = 0; gameState.stars = 0;
-    gameState.totalTime = 0; gameState.answers = []; gameState.levelScores = [];
-    gameState.hintsUsed = 0; gameState.correctCount = 0; gameState.totalQuestions = 0;
+    gameState.player.name = name;
+    gameState.currentLevel = 0;
+    gameState.score = 0;
+    gameState.stars = 0;
+    gameState.totalTime = 0;
+    gameState.answers = [];
+    gameState.levelScores = [];
+    gameState.hintsUsed = 0;
+    gameState.correctCount = 0;
+    gameState.totalQuestions = 0;
     document.getElementById('scorePanel').style.display = 'flex';
     updateScorePanel();
     showLevelIntro();
 }
 
 function showLevelIntro() {
-    const level = levels[gameState.currentLevel];
+    var level = levels[gameState.currentLevel];
     document.getElementById('introTitle').innerHTML = level.title;
-    const diffContainer = document.getElementById('introDifficulty');
+    var diffContainer = document.getElementById('introDifficulty');
     diffContainer.innerHTML = '';
-    for (let i = 0; i < 5; i++) {
-        const dot = document.createElement('div');
+    var i;
+    for (i = 0; i < 5; i++) {
+        var dot = document.createElement('div');
         dot.className = 'difficulty-dot' + (i < level.difficulty ? ' active' : '');
         diffContainer.appendChild(dot);
     }
     document.getElementById('introScenario').innerHTML = level.scenario;
-    document.getElementById('introContent').innerHTML = `<p style="color:#8892b0;line-height:1.6;">${level.intro}</p>
-        <div style="margin-top:15px;padding:15px;background:var(--dark);border-radius:10px;">
-            <strong style="color:var(--warning);">📋 Regras da Missão:</strong><br>
-            <small style="color:#8892b0;">
-            • ${level.questions.length} perguntas nesta missão<br>
-            • +100 pontos por resposta correta<br>
-            • Bônus de tempo: +10 pts por segundo restante<br>
-            • Dica custa 20 pontos<br>
-            • Precisa acertar pelo menos 60% para avançar
-            </small>
-        </div>`;
+    document.getElementById('introContent').innerHTML = '<p style="color:#8892b0;line-height:1.6;">' + level.intro + '</p>' +
+        '<div style="margin-top:15px;padding:15px;background:var(--dark);border-radius:10px;">' +
+        '<strong style="color:var(--warning);">📋 Regras da Missão:</strong><br>' +
+        '<small style="color:#8892b0;">' +
+        '• ' + level.questions.length + ' perguntas nesta missão<br>' +
+        '• +100 pontos por resposta correta<br>' +
+        '• Bônus de tempo: +10 pts por segundo restante<br>' +
+        '• Dica custa 20 pontos<br>' +
+        '• Precisa acertar pelo menos 60% para avançar' +
+        '</small></div>';
     showScreen('screen-intro');
 }
 
@@ -743,7 +778,7 @@ function startLevel() {
 
 function startTimer() {
     clearInterval(gameState.timerInterval);
-    gameState.timerInterval = setInterval(() => {
+    gameState.timerInterval = setInterval(function() {
         gameState.levelTime--;
         gameState.totalTime++;
         updateTimer();
@@ -756,38 +791,41 @@ function startTimer() {
 }
 
 function updateTimer() {
-    const timer = document.getElementById('timer');
-    const mins = Math.floor(gameState.levelTime / 60);
-    const secs = gameState.levelTime % 60;
-    timer.textContent = `⏱️ ${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')}`;
+    var timer = document.getElementById('timer');
+    var mins = Math.floor(gameState.levelTime / 60);
+    var secs = gameState.levelTime % 60;
+    timer.textContent = '⏱️ ' + String(mins).padStart(2,'0') + ':' + String(secs).padStart(2,'0');
     if (gameState.levelTime <= 30) timer.classList.add('warning');
     else timer.classList.remove('warning');
 }
 
 function updateScorePanel() {
     document.getElementById('scoreValue').textContent = gameState.score;
-    document.getElementById('levelValue').textContent = `${gameState.currentLevel + 1}/5`;
-    const mins = Math.floor(gameState.totalTime / 60);
-    const secs = gameState.totalTime % 60;
-    document.getElementById('timeValue').textContent = `${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')}`;
-    document.getElementById('starsValue').textContent = `⭐ ${gameState.stars}`;
+    document.getElementById('levelValue').textContent = (gameState.currentLevel + 1) + '/5';
+    var mins = Math.floor(gameState.totalTime / 60);
+    var secs = gameState.totalTime % 60;
+    document.getElementById('timeValue').textContent = String(mins).padStart(2,'0') + ':' + String(secs).padStart(2,'0');
+    document.getElementById('starsValue').textContent = '⭐ ' + gameState.stars;
 }
 
 function showQuestion() {
-    const level = levels[gameState.currentLevel];
-    const q = level.questions[gameState.currentQuestion];
-    document.getElementById('quizTitle').textContent = `Pergunta ${gameState.currentQuestion + 1}/${level.questions.length}`;
+    var level = levels[gameState.currentLevel];
+    var q = level.questions[gameState.currentQuestion];
+    document.getElementById('quizTitle').textContent = 'Pergunta ' + (gameState.currentQuestion + 1) + '/' + level.questions.length;
     document.getElementById('quizScenario').innerHTML = q.scenario;
     document.getElementById('quizQuestion').innerHTML = q.text;
-    const optionsContainer = document.getElementById('quizOptions');
+    var optionsContainer = document.getElementById('quizOptions');
     optionsContainer.innerHTML = '';
-    q.options.forEach((opt, idx) => {
-        const div = document.createElement('div');
+    var i;
+    for (i = 0; i < q.options.length; i++) {
+        var div = document.createElement('div');
         div.className = 'option';
-        div.innerHTML = `<div class="option-letter">${String.fromCharCode(65 + idx)}</div><div>${opt.text}</div>`;
-        div.onclick = () => selectOption(idx, div);
+        div.innerHTML = '<div class="option-letter">' + String.fromCharCode(65 + i) + '</div><div>' + q.options[i].text + '</div>';
+        div.onclick = (function(idx) {
+            return function() { selectOption(idx, this); };
+        })(i);
         optionsContainer.appendChild(div);
-    });
+    }
     document.getElementById('hintBox').classList.remove('show');
     document.getElementById('feedback').classList.remove('show');
     document.getElementById('btnConfirm').disabled = true;
@@ -795,15 +833,19 @@ function showQuestion() {
 }
 
 function selectOption(idx, element) {
-    document.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
+    var options = document.querySelectorAll('.option');
+    var i;
+    for (i = 0; i < options.length; i++) {
+        options[i].classList.remove('selected');
+    }
     element.classList.add('selected');
     gameState.selectedOption = idx;
     document.getElementById('btnConfirm').disabled = false;
 }
 
 function showHint() {
-    const level = levels[gameState.currentLevel];
-    const q = level.questions[gameState.currentQuestion];
+    var level = levels[gameState.currentLevel];
+    var q = level.questions[gameState.currentQuestion];
     document.getElementById('hintText').textContent = q.hint;
     document.getElementById('hintBox').classList.add('show');
     gameState.hintsUsed++;
@@ -814,16 +856,19 @@ function showHint() {
 function confirmAnswer() {
     if (gameState.selectedOption === null) return;
     clearInterval(gameState.timerInterval);
-    const level = levels[gameState.currentLevel];
-    const q = level.questions[gameState.currentQuestion];
-    const selected = q.options[gameState.selectedOption];
-    const isCorrect = selected.correct;
-    const options = document.querySelectorAll('.option');
+    var level = levels[gameState.currentLevel];
+    var q = level.questions[gameState.currentQuestion];
+    var selected = q.options[gameState.selectedOption];
+    var isCorrect = selected.correct;
+    var options = document.querySelectorAll('.option');
     options[gameState.selectedOption].classList.add(isCorrect ? 'correct' : 'wrong');
     if (!isCorrect) {
-        q.options.forEach((opt, idx) => { if (opt.correct) options[idx].classList.add('correct'); });
+        var i;
+        for (i = 0; i < q.options.length; i++) {
+            if (q.options[i].correct) options[i].classList.add('correct');
+        }
     }
-    let points = 0;
+    var points = 0;
     if (isCorrect) {
         points = 100 + Math.max(0, gameState.levelTime * 10);
         gameState.score += points;
@@ -835,15 +880,18 @@ function confirmAnswer() {
         level: gameState.currentLevel + 1, question: gameState.currentQuestion + 1,
         correct: isCorrect, points: points, time: 120 - gameState.levelTime
     });
-    const feedback = document.getElementById('feedback');
+    var feedback = document.getElementById('feedback');
     feedback.className = 'feedback show ' + (isCorrect ? 'correct' : 'wrong');
-    feedback.innerHTML = `<strong style="font-size:1.2rem;">${isCorrect ? '✅ Correto!' : '❌ Incorreto!'}</strong><br>
-        <p style="margin-top:10px;">${q.explanation}</p>
-        ${isCorrect ? `<div style="margin-top:10px;color:var(--success);">+${points} pontos!</div>` : ''}`;
-    document.querySelectorAll('.option').forEach(opt => { opt.style.pointerEvents = 'none'; });
+    feedback.innerHTML = '<strong style="font-size:1.2rem;">' + (isCorrect ? '✅ Correto!' : '❌ Incorreto!') + '</strong><br>' +
+        '<p style="margin-top:10px;">' + q.explanation + '</p>' +
+        (isCorrect ? '<div style="margin-top:10px;color:var(--success);">+' + points + ' pontos!</div>' : '');
+    var allOpts = document.querySelectorAll('.option');
+    for (var j = 0; j < allOpts.length; j++) {
+        allOpts[j].style.pointerEvents = 'none';
+    }
     document.getElementById('btnConfirm').disabled = true;
     updateScorePanel();
-    setTimeout(() => {
+    setTimeout(function() {
         gameState.currentQuestion++;
         if (gameState.currentQuestion < level.questions.length) {
             gameState.levelTime = 120;
@@ -856,21 +904,27 @@ function confirmAnswer() {
 }
 
 function timeUp() {
-    const feedback = document.getElementById('feedback');
+    var feedback = document.getElementById('feedback');
     feedback.className = 'feedback show wrong';
-    feedback.innerHTML = `<strong style="font-size:1.2rem;">⏰ Tempo Esgotado!</strong><br>
-        <p style="margin-top:10px;">Você não respondeu a tempo. A resposta correta será mostrada.</p>`;
-    const level = levels[gameState.currentLevel];
-    const q = level.questions[gameState.currentQuestion];
-    const options = document.querySelectorAll('.option');
-    q.options.forEach((opt, idx) => { if (opt.correct) options[idx].classList.add('correct'); });
+    feedback.innerHTML = '<strong style="font-size:1.2rem;">⏰ Tempo Esgotado!</strong><br>' +
+        '<p style="margin-top:10px;">Você não respondeu a tempo. A resposta correta será mostrada.</p>';
+    var level = levels[gameState.currentLevel];
+    var q = level.questions[gameState.currentQuestion];
+    var options = document.querySelectorAll('.option');
+    var i;
+    for (i = 0; i < q.options.length; i++) {
+        if (q.options[i].correct) options[i].classList.add('correct');
+    }
     gameState.answers.push({
         level: gameState.currentLevel + 1, question: gameState.currentQuestion + 1,
         correct: false, points: 0, time: 120
     });
     gameState.totalQuestions++;
-    document.querySelectorAll('.option').forEach(opt => { opt.style.pointerEvents = 'none'; });
-    setTimeout(() => {
+    var allOpts = document.querySelectorAll('.option');
+    for (var j = 0; j < allOpts.length; j++) {
+        allOpts[j].style.pointerEvents = 'none';
+    }
+    setTimeout(function() {
         gameState.currentQuestion++;
         if (gameState.currentQuestion < level.questions.length) {
             gameState.levelTime = 120;
@@ -883,9 +937,15 @@ function timeUp() {
 }
 
 function finishLevel() {
-    const level = levels[gameState.currentLevel];
-    const levelCorrect = gameState.answers.filter(a => a.level === gameState.currentLevel + 1 && a.correct).length;
-    const required = Math.ceil(level.questions.length * 0.6);
+    var level = levels[gameState.currentLevel];
+    var levelCorrect = 0;
+    var i;
+    for (i = 0; i < gameState.answers.length; i++) {
+        if (gameState.answers[i].level === gameState.currentLevel + 1 && gameState.answers[i].correct) {
+            levelCorrect++;
+        }
+    }
+    var required = Math.ceil(level.questions.length * 0.6);
     gameState.levelScores.push({
         level: gameState.currentLevel + 1, score: gameState.score,
         correct: levelCorrect, total: level.questions.length
@@ -894,12 +954,12 @@ function finishLevel() {
         showConfetti();
         document.getElementById('completeIcon').textContent = level.icon;
         document.getElementById('completeMessage').innerHTML = 
-            `Você acertou <strong>${levelCorrect}/${level.questions.length}</strong> perguntas!<br>
-             Missão ${level.title.split(':')[0]} concluída com sucesso!`;
+            'Você acertou <strong>' + levelCorrect + '/' + level.questions.length + '</strong> perguntas!<br>' +
+            'Missão ' + level.title.split(':')[0] + ' concluída com sucesso!';
         document.getElementById('completeScore').textContent = gameState.score;
         document.getElementById('completeTime').textContent = gameState.totalTime;
         document.getElementById('completeStars').textContent = gameState.stars;
-        const badgesDiv = document.getElementById('completeBadges');
+        var badgesDiv = document.getElementById('completeBadges');
         badgesDiv.innerHTML = '';
         if (levelCorrect === level.questions.length) badgesDiv.innerHTML += '<span class="badge badge-gold">🏆 Perfeito!</span>';
         else if (levelCorrect >= level.questions.length - 1) badgesDiv.innerHTML += '<span class="badge badge-silver">🥈 Excelente!</span>';
@@ -913,16 +973,23 @@ function finishLevel() {
 }
 
 function updateProgress() {
-    const nodes = document.querySelectorAll('.level-node');
-    const connectors = document.querySelectorAll('.connector');
-    nodes.forEach((node, idx) => {
-        if (idx <= gameState.currentLevel + 1) {
-            node.classList.remove('locked');
-            if (idx <= gameState.currentLevel) { node.classList.add('completed'); node.classList.remove('active'); }
-            else if (idx === gameState.currentLevel + 1) node.classList.add('active');
+    var nodes = document.querySelectorAll('.level-node');
+    var connectors = document.querySelectorAll('.connector');
+    var i;
+    for (i = 0; i < nodes.length; i++) {
+        if (i <= gameState.currentLevel + 1) {
+            nodes[i].classList.remove('locked');
+            if (i <= gameState.currentLevel) {
+                nodes[i].classList.add('completed');
+                nodes[i].classList.remove('active');
+            } else if (i === gameState.currentLevel + 1) {
+                nodes[i].classList.add('active');
+            }
         }
-    });
-    connectors.forEach((conn, idx) => { if (idx <= gameState.currentLevel) conn.classList.add('completed'); });
+    }
+    for (i = 0; i < connectors.length; i++) {
+        if (i <= gameState.currentLevel) connectors[i].classList.add('completed');
+    }
 }
 
 function nextLevel() {
@@ -932,18 +999,28 @@ function nextLevel() {
 }
 
 function retryLevel() {
-    gameState.answers = gameState.answers.filter(a => a.level !== gameState.currentLevel + 1);
-    gameState.currentQuestion = 0; gameState.levelTime = 120;
-    showQuestion(); showScreen('screen-quiz'); startTimer();
+    var newAnswers = [];
+    var i;
+    for (i = 0; i < gameState.answers.length; i++) {
+        if (gameState.answers[i].level !== gameState.currentLevel + 1) {
+            newAnswers.push(gameState.answers[i]);
+        }
+    }
+    gameState.answers = newAnswers;
+    gameState.currentQuestion = 0;
+    gameState.levelTime = 120;
+    showQuestion();
+    showScreen('screen-quiz');
+    startTimer();
 }
 
 function showVictory() {
-    const accuracy = gameState.totalQuestions > 0 ? Math.round((gameState.correctCount / gameState.totalQuestions) * 100) : 0;
+    var accuracy = gameState.totalQuestions > 0 ? Math.round((gameState.correctCount / gameState.totalQuestions) * 100) : 0;
     document.getElementById('finalScore').textContent = gameState.score;
     document.getElementById('finalTime').textContent = gameState.totalTime + 's';
     document.getElementById('finalAccuracy').textContent = accuracy + '%';
     document.getElementById('finalStars').textContent = gameState.stars;
-    const badgesDiv = document.getElementById('finalBadges');
+    var badgesDiv = document.getElementById('finalBadges');
     badgesDiv.innerHTML = '';
     if (accuracy === 100) badgesDiv.innerHTML += '<span class="badge badge-gold">👑 Newtoniano Supremo</span>';
     else if (accuracy >= 80) badgesDiv.innerHTML += '<span class="badge badge-gold">🥇 Mestre</span>';
@@ -957,7 +1034,7 @@ function showVictory() {
 }
 
 function saveToLeaderboard() {
-    const entry = {
+    var entry = {
         name: gameState.player.name, matricula: '-',
         turma: '-', score: gameState.score,
         level: gameState.currentLevel + 1, time: gameState.totalTime,
@@ -966,23 +1043,25 @@ function saveToLeaderboard() {
         date: new Date().toLocaleString('pt-BR')
     };
     leaderboard.push(entry);
-    leaderboard.sort((a, b) => b.score - a.score);
+    leaderboard.sort(function(a, b) { return b.score - a.score; });
     leaderboard = leaderboard.slice(0, 50);
     localStorage.setItem('newtonLeaderboard', JSON.stringify(leaderboard));
 }
 
 function showLeaderboard() {
-    const tbody = document.getElementById('leaderboardBody');
+    var tbody = document.getElementById('leaderboardBody');
     tbody.innerHTML = '';
-    leaderboard.forEach((entry, idx) => {
-        const row = document.createElement('tr');
-        const rankClass = idx === 0 ? 'rank-1' : idx === 1 ? 'rank-2' : idx === 2 ? 'rank-3' : '';
-        row.innerHTML = `<td class="${rankClass}">${idx + 1}°</td>
-            <td><strong>${entry.name}</strong></td>
-            <td><strong style="color:var(--primary);">${entry.score}</strong></td>
-            <td>${entry.level}/5</td><td>${entry.time}s</td><td>⭐ ${entry.stars}</td>`;
+    var i;
+    for (i = 0; i < leaderboard.length; i++) {
+        var entry = leaderboard[i];
+        var row = document.createElement('tr');
+        var rankClass = i === 0 ? 'rank-1' : i === 1 ? 'rank-2' : i === 2 ? 'rank-3' : '';
+        row.innerHTML = '<td class="' + rankClass + '">' + (i + 1) + '°</td>' +
+            '<td><strong>' + entry.name + '</strong></td>' +
+            '<td><strong style="color:var(--primary);">' + entry.score + '</strong></td>' +
+            '<td>' + entry.level + '/5</td><td>' + entry.time + 's</td><td>⭐ ' + entry.stars + '</td>';
         tbody.appendChild(row);
-    });
+    }
     if (leaderboard.length === 0) {
         tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:#666;padding:30px;">Nenhuma equipe registrada ainda. Seja a primeira!</td></tr>';
     }
@@ -995,67 +1074,75 @@ function goBack() {
 }
 
 function restartGame() {
-    gameState.currentLevel = 0; gameState.score = 0; gameState.stars = 0;
-    gameState.totalTime = 0; gameState.answers = []; gameState.levelScores = [];
-    gameState.hintsUsed = 0; gameState.correctCount = 0; gameState.totalQuestions = 0;
-    document.querySelectorAll('.level-node').forEach((node, idx) => {
-        node.classList.remove('completed', 'active');
-        if (idx === 0) node.classList.add('active');
-        else node.classList.add('locked');
-    });
-    document.querySelectorAll('.connector').forEach(conn => conn.classList.remove('completed'));
+    gameState.currentLevel = 0;
+    gameState.score = 0;
+    gameState.stars = 0;
+    gameState.totalTime = 0;
+    gameState.answers = [];
+    gameState.levelScores = [];
+    gameState.hintsUsed = 0;
+    gameState.correctCount = 0;
+    gameState.totalQuestions = 0;
+    var nodes = document.querySelectorAll('.level-node');
+    var i;
+    for (i = 0; i < nodes.length; i++) {
+        nodes[i].classList.remove('completed', 'active');
+        if (i === 0) nodes[i].classList.add('active');
+        else nodes[i].classList.add('locked');
+    }
+    var connectors = document.querySelectorAll('.connector');
+    for (i = 0; i < connectors.length; i++) {
+        connectors[i].classList.remove('completed');
+    }
     document.getElementById('scorePanel').style.display = 'none';
     showScreen('screen-login');
 }
 
 function exportResults() {
-    const data = {
+    var data = {
         player: gameState.player, finalScore: gameState.score,
         totalTime: gameState.totalTime, stars: gameState.stars,
         accuracy: gameState.totalQuestions > 0 ? Math.round((gameState.correctCount / gameState.totalQuestions) * 100) : 0,
         answers: gameState.answers, levelScores: gameState.levelScores,
         timestamp: new Date().toISOString()
     };
-    const GAS_URL = localStorage.getItem('gasUrl') || '';
+    var GAS_URL = localStorage.getItem('gasUrl') || '';
     if (GAS_URL) {
         fetch(GAS_URL, {
             method: 'POST', body: JSON.stringify(data),
             headers: { 'Content-Type': 'application/json' }
         })
-        .then(response => response.json())
-        .then(result => { showModal('✅ Sucesso!', 'Dados enviados para a planilha com sucesso!'); })
-        .catch(error => { console.error('Error:', error); exportToCSV(data); });
+        .then(function(response) { return response.json(); })
+        .then(function(result) { showModal('✅ Sucesso!', 'Dados enviados para a planilha com sucesso!'); })
+        .catch(function(error) { console.error('Error:', error); exportToCSV(data); });
     } else {
         exportToCSV(data);
     }
 }
 
 function exportToCSV(data) {
-    let csv = 'Matricula,Nome,Turma,Email,Nivel,Questao,RespostaCorreta,Pontos,Tempo,Data
-';
-    data.answers.forEach(ans => {
-        csv += `${data.player.matricula},${data.player.name},${data.player.turma},${data.player.email},${ans.level},${ans.question},${ans.correct ? 'SIM' : 'NAO'},${ans.points},${ans.time},${new Date().toLocaleString('pt-BR')}
-`;
-    });
-    csv += `
-RESUMO,,,,,,,,,
-`;
-    csv += `Matricula,Nome,Turma,Email,PontuacaoTotal,TempoTotal,Estrelas,Precisao,Data
-`;
-    csv += `${data.player.matricula},${data.player.name},${data.player.turma},${data.player.email},${data.finalScore},${data.totalTime},${data.stars},${data.accuracy}%,${new Date().toLocaleString('pt-BR')}
-`;
-    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-    const link = document.createElement('a');
+    var csv = 'Grupo,Nivel,Questao,RespostaCorreta,Pontos,Tempo,Data\n';
+    var i;
+    for (i = 0; i < data.answers.length; i++) {
+        var ans = data.answers[i];
+        csv += data.player.name + ',' + ans.level + ',' + ans.question + ',' + (ans.correct ? 'SIM' : 'NAO') + ',' + ans.points + ',' + ans.time + ',' + new Date().toLocaleString('pt-BR') + '\n';
+    }
+    csv += '\nRESUMO,,,,,,\n';
+    csv += 'Grupo,PontuacaoTotal,TempoTotal,Estrelas,Precisao,Data\n';
+    csv += data.player.name + ',' + data.finalScore + ',' + data.totalTime + ',' + data.stars + ',' + data.accuracy + '%,' + new Date().toLocaleString('pt-BR') + '\n';
+    var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    var link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
-    link.download = `newton_game_${data.player.matricula}_${new Date().toISOString().slice(0,10)}.csv`;
+    link.download = 'newton_game_' + data.player.name.split(' ').join('_') + '_' + new Date().toISOString().slice(0,10) + '.csv';
     link.click();
     showModal('📊 CSV Gerado!', 'Arquivo CSV baixado! Importe-o manualmente no Google Planilhas ou configure a URL do Apps Script para envio automático.');
 }
 
 function showConfetti() {
-    const colors = ['#00d4ff', '#ff6b35', '#7c3aed', '#00e676', '#ffc400'];
-    for (let i = 0; i < 50; i++) {
-        const confetti = document.createElement('div');
+    var colors = ['#00d4ff', '#ff6b35', '#7c3aed', '#00e676', '#ffc400'];
+    var i;
+    for (i = 0; i < 50; i++) {
+        var confetti = document.createElement('div');
         confetti.className = 'confetti';
         confetti.style.left = Math.random() * 100 + '%';
         confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
@@ -1063,7 +1150,7 @@ function showConfetti() {
         confetti.style.width = Math.random() * 10 + 5 + 'px';
         confetti.style.height = Math.random() * 10 + 5 + 'px';
         document.body.appendChild(confetti);
-        setTimeout(() => confetti.remove(), 3000);
+        setTimeout(function(el) { return function() { el.remove(); }; }(confetti), 3000);
     }
 }
 
